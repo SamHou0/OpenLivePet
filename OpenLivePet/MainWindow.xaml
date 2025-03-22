@@ -1,0 +1,30 @@
+﻿<Window x:Class="OpenLivePet.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OpenLivePet"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        mc:Ignorable="d"
+        Background="Transparent"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Topmost="True"
+        Title="MainWindow" Height="400" Width="400">
+    <Grid MouseMove="Grid_MouseMove" Background="Transparent" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Border x:Name="LiveDisplay"></Border>
+        <TextBox TextAlignment="Center" x:Name="chatBox" Opacity="0.6" Grid.Row="1" Margin="10,0" AcceptsReturn="True"></TextBox>
+        <hc:NotifyIcon>
+            <hc:NotifyIcon.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Exit" Click="Exit_Click"/>
+                </ContextMenu>
+            </hc:NotifyIcon.ContextMenu>
+        </hc:NotifyIcon>
+    </Grid>
+</Window>
